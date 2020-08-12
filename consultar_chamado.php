@@ -1,9 +1,13 @@
 <? require_once "validador_acesso.php" ?>
 <?php 
 $chamados= array();
-$arquivo = fopen('arquivo.txt','r');
-while(!feof($arquivo)){
-  fgets($arquivo);
+
+$arquivo = fopen('arquivo.txt','r');//abre o arquivo.txt
+while(
+  !feof($arquivo // A função feof  (Find end of file) retorna true quando depara com o fim do arquivo
+  
+  )){
+  $registro = fgets($arquivo);
   $chamados[]=$registro;
 }
 fclose($arquivo);
@@ -59,8 +63,7 @@ fclose($arquivo);
 
                 </div>
               </div>
-             <? { ?>
-
+              <? } ?>
 
               <div class="row mt-5">
                 <div class="col-6">
