@@ -2,9 +2,9 @@
 <?php 
 $chamados= array();
 
-$arquivo = fopen('arquivo.txt','r');//abre o arquivo.txt
+$arquivo = fopen('private/arquivo.txt','r');
 while(
-  !feof($arquivo // A função feof  (Find end of file) retorna true quando depara com o fim do arquivo
+  !feof($arquivo 
   
   )){
   $registro = fgets($arquivo);
@@ -32,7 +32,7 @@ fclose($arquivo);
 
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
-        <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
     </nav>
@@ -47,11 +47,13 @@ fclose($arquivo);
             </div>
             
             <div class="card-body">
-              <? foreach($chamados as $chamado){ ?>
-                <?php
+              <?php foreach($chamados as $chamado){ ?>
+                
+                
+              <?php
                 $chamado_dados=explode('#', $chamado);
                 if(count($chamado_dados)<3){
-                  continue;
+                 continue;
                 }
                 ?>
 
@@ -63,7 +65,7 @@ fclose($arquivo);
 
                 </div>
               </div>
-              <? } ?>
+              <?php } ?>
 
               <div class="row mt-5">
                 <div class="col-6">
